@@ -92,6 +92,15 @@ JsonPath library unbundled
 `com.intellij.openapi.actionSystem.ex.ActionUtil.showDumbModeWarning(Project, AnActionEvent[])` method removed
 : Use `showDumbModeWarning(@Nullable Project project, @NotNull AnAction action, AnActionEvent @NotNull ... events)` instead
 
+`com.intellij.ide.projectView.impl.AbstractProjectViewPaneWithAsyncSupport.createStructure()` method return type changed from `ProjectAbstractTreeStructureBase` to `AbstractTreeStructureBase`
+: Source compatibility is preserved, ABI compatibility is not. Just recompile the existing code.
+
+`com.intellij.ide.projectView.impl.AbstractProjectViewPaneWithAsyncSupport.createTree(DefaultTreeModel)` method return type changed from `ProjectViewTree` to `DnDAwareTree`
+: Source compatibility is preserved, ABI compatibility is not. Just recompile the existing code.
+
+`com.intellij.packageDependencies.ui.PackageTreeExpansionMonitor.install(JTree, Project)` method parameter `Project` removed
+: This parameter was unused, so just remove the passed values.
+
 ### Java Plugin 2023.3
 
 `com.siyeh.ipp.base.Intention` class removed
